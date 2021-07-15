@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package ipcMsg;
+
+service ClientEnd {
+    rpc Start (Request) returns (Response) {}
+    rpc Stop (Request) returns (Response) {}
+    rpc Query (Request) returns (Response) {}
+    rpc Update (Request) returns (Response) {}
+}
+
+service ServerEnd {
+    rpc Notify (Request) returns (Response) {}
+}
+
+message Request {
+    string whoami = 1;
+    string whatido = 2;
+    string whichitake = 3;
+}
+
+message Response {
+    string whoheis = 1;
+    string whathedo = 2;
+    int32 result_code = 3;
+    string result_reason = 4;
+}
+

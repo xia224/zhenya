@@ -1,0 +1,23 @@
+syntax = "proto3";
+package common;
+
+import "google/protobuf/timestamp.proto";
+option go_package = "";
+
+message Status {
+    int32 code = 1;
+    string reason = 2;
+}
+
+message Message {
+    enum MsgType {
+        BILLING = 0;
+        ARGUS = 1;
+        ONLINE = 2;
+        NCS = 3;
+        ELK = 4;
+    }
+    MsgType type = 1;
+    Status status = 2;
+    google.protobuf.Timestamp time_stamp = 3;
+}
