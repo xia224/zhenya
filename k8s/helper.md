@@ -1,5 +1,8 @@
 # k8s helper doc
 
+## 书籍
+《深入剖析kubernetes》张磊
+
 ## kubectl related
 // load kubectl binary file
 `curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"`
